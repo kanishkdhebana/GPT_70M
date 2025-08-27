@@ -2,4 +2,7 @@
 __pycache__/
 input.txt
 checkpoints/
+fine-tuning/
 final_model.pt
+dataset-3B.zip
+final_model_70M.pt
