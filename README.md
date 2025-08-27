@@ -57,9 +57,13 @@ The **70 million parameter count** was chosen for its optimal balance of several
 * **Framework:** PyTorch.
 * **Optimizer:** **AdamW**
 * **Learning Rate Scheduler:** **Cosine decay with warmup**
+* <img src="assets/lr.png" alt="Learning Rate Schedule" width="60%">
 * **Mixed Precision:** Optional support via `torch.cuda.amp`
 * **Logging & Checkpointing:** Integrated for tracking progress and saving model states.
 * **Simulated Batch Size:** 524,288 (2^19).
+
+Here's the training throughput achieved on a single A100 GPU:
+<img src="assets/throughput.png" alt="Throughput" width="60%">
 
 ### Key Training Hyperparameters
 
@@ -70,6 +74,15 @@ The **70 million parameter count** was chosen for its optimal balance of several
 * **Max Learning Rate:** 6e-4
 * **Min Learning Rate:** 0.1 * `max_learning_rate`
 * **Weight Decay:** 0.01
+
+---
+
+## Training Performance
+The model was trained for 5,912 steps, showing a consistent decrease in both training and validation loss. The final validation perplexity achieved was **7.48**.
+
+| Training & Validation Loss | Train vs. Validation Perplexity |
+| :---: | :---: |
+| <img src="assets/loss.png" alt="Loss vs Step" width="90%"> | <img src="assets/perplexity.png" alt="Perplexity vs Step" width="90%"> |
 
 ---
 
